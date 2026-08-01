@@ -65,7 +65,7 @@
       <h2>Alguns momentos especiais</h2>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item" *ngFor="let image of galleryImages">
+      <div class="gallery-item" #galleryItem *ngFor="let image of galleryImages">
         <img [src]="image" [alt]="'Olivia ' + image" loading="lazy" />
       </div>
     </div>

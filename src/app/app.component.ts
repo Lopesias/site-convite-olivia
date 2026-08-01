@@ -1,26 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'Olivia';
   isMenuOpen = false;
   countdownTarget = '2026-10-18T16:00:00';
   timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
   opened = false;
   galleryImages = [
-    'assets/gallery/WhatsApp Image 2026-08-01 at 13.31.41.jpeg',
-    'assets/gallery/WhatsApp Image 2026-08-01 at 13.31.41 (1).jpeg',
-    'assets/gallery/WhatsApp Image 2026-08-01 at 13.31.41 (2).jpeg'
+    'assets/gallery/foto-1.jpeg',
+    'assets/gallery/foto-2.jpeg',
+    'assets/gallery/foto-3.jpeg'
   ];
+
+  @ViewChildren('galleryItem', { read: ElementRef }) galleryItems!: QueryList<ElementRef<HTMLElement>>;
 
   ngOnInit(): void {
     this.updateCountdown();
     setInterval(() => this.updateCountdown(), 1000);
+  }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    this.galleryItems.forEach((item) => observer.observe(item.nativeElement));
   }
 
   toggleMenu(): void {
