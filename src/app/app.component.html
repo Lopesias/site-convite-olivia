@@ -1,0 +1,84 @@
+<main class="page-shell">
+  <section class="hero section-card">
+    <div class="hero-content">
+      <div class="hero-badges">
+        <span class="pill">Meu primeiro aniversário</span>
+        <span class="pill">Você está convidado</span>
+      </div>
+
+      <h1>Olivia</h1>
+      <p class="subtitle">Venha celebrar comigo esse momento tão especial e cheio de amor.</p>
+
+      <div class="hero-actions">
+        <a href="#confirmacao" class="btn btn-primary">Abrir convite</a>
+        <a href="#local" class="btn btn-secondary">Ver local</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-frame">
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80" alt="Olivia" />
+      </div>
+    </div>
+  </section>
+
+  <section id="confirmacao" class="section-card info-card">
+    <div class="section-title">
+      <p class="eyebrow">Confirme sua presença</p>
+      <h2>Uma celebração cheia de carinho</h2>
+    </div>
+    <p class="section-text">
+      Sua presença fará esse dia ainda mais encantador. Ficarei muito feliz em compartilhar esse momento especial com você.
+    </p>
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>Data</strong>
+        <span>18 de outubro de 2026</span>
+      </div>
+      <div class="info-item">
+        <strong>Horário</strong>
+        <span>16h00</span>
+      </div>
+      <div class="info-item">
+        <strong>Local</strong>
+        <span>Casa da família</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-card countdown-card">
+    <div class="section-title">
+      <p class="eyebrow">Contagem regressiva</p>
+      <h2>Faltam poucos dias para esse momento</h2>
+    </div>
+    <div class="countdown-grid">
+      <div class="countdown-item"><span>{{ timeLeft.days }}</span><small>Dias</small></div>
+      <div class="countdown-item"><span>{{ timeLeft.hours }}</span><small>Horas</small></div>
+      <div class="countdown-item"><span>{{ timeLeft.minutes }}</span><small>Minutos</small></div>
+      <div class="countdown-item"><span>{{ timeLeft.seconds }}</span><small>Segundos</small></div>
+    </div>
+  </section>
+
+  <section id="local" class="section-card map-card">
+    <div class="section-title">
+      <p class="eyebrow">Local</p>
+      <h2>Venha me encontrar aqui</h2>
+    </div>
+    <p class="section-text">Rua das Flores, 123 - Jardim Encanto</p>
+    <iframe
+      src="https://www.google.com/maps?q=Rua%20das%20Flores%20123%20Jardim%20Encanto&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa do evento"
+    ></iframe>
+  </section>
+
+  <section class="section-card whatsapp-card">
+    <div class="section-title">
+      <p class="eyebrow">Confirmação</p>
+      <h2>Me avise que você vem</h2>
+    </div>
+    <p class="section-text">Envie uma mensagem para confirmar sua presença.</p>
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20anivers%C3%A1rio%20da%20Olivia." class="btn btn-primary">Mensagem no WhatsApp</a>
+  </section>
+</main>
