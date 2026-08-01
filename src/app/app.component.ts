@@ -28,12 +28,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(
+    const galleryObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            galleryObserver.unobserve(entry.target);
           }
         });
       },
@@ -42,7 +42,24 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     );
 
-    this.galleryItems.forEach((item) => observer.observe(item.nativeElement));
+    this.galleryItems.forEach((item) => galleryObserver.observe(item.nativeElement));
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible-section');
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    const sections = document.querySelectorAll('.section-card');
+    sections.forEach((section) => sectionObserver.observe(section));
   }
 
   toggleMenu(): void {

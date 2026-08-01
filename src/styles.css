@@ -4,8 +4,9 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fff8fc 0%, #fce4ec 100%);
+  font-family: 'Work Sans', sans-serif;
+  background: #11110f;
+  color: #efe8d8;
 }
 
 * {
