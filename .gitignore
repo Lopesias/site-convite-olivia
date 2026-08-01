@@ -1,1 +1,11 @@
 node_modules
+
+# Angular build output
+/dist
+/.angular
+/.sass-cache
+
+# Environment files
+.env
+.env.*
+
