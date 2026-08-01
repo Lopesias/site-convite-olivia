@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +6,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Olivia';
   isMenuOpen = false;
   countdownTarget = '2026-10-18T16:00:00';
   timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
   opened = false;
+  galleryImages = [
+    'assets/gallery/WhatsApp Image 2026-08-01 at 13.31.41.jpeg',
+    'assets/gallery/WhatsApp Image 2026-08-01 at 13.31.41 (1).jpeg',
+    'assets/gallery/WhatsApp Image 2026-08-01 at 13.31.41 (2).jpeg'
+  ];
 
   ngOnInit(): void {
     this.updateCountdown();

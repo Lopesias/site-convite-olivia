@@ -17,7 +17,7 @@
 
     <div class="hero-visual">
       <div class="photo-frame">
-        <img src="assets/olivia-1.jpeg" alt="Olivia" />
+        <img src="/assets/olivia-1.jpeg" alt="Olivia" />
       </div>
     </div>
   </section>
@@ -56,6 +56,18 @@
       <div class="countdown-item"><span>{{ timeLeft.hours }}</span><small>Horas</small></div>
       <div class="countdown-item"><span>{{ timeLeft.minutes }}</span><small>Minutos</small></div>
       <div class="countdown-item"><span>{{ timeLeft.seconds }}</span><small>Segundos</small></div>
+    </div>
+  </section>
+
+  <section class="section-card gallery-card">
+    <div class="section-title">
+      <p class="eyebrow">Memórias</p>
+      <h2>Alguns momentos especiais</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let image of galleryImages">
+        <img [src]="image" [alt]="'Olivia ' + image" loading="lazy" />
+      </div>
     </div>
   </section>
 
