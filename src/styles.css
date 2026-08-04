@@ -2,13 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  font-family: 'Work Sans', sans-serif;
-  background: #11110f;
-  color: #efe8d8;
-}
-
 * {
   box-sizing: border-box;
 }

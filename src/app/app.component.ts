@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,13 +14,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   countdownTarget = '2026-10-18T16:00:00';
   timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
   opened = false;
-  galleryImages = [
-    'assets/gallery/foto-1.jpeg',
-    'assets/gallery/foto-2.jpeg',
-    'assets/gallery/foto-3.jpeg'
-  ];
-
-  @ViewChildren('galleryItem', { read: ElementRef }) galleryItems!: QueryList<ElementRef<HTMLElement>>;
 
   ngOnInit(): void {
     this.updateCountdown();
@@ -28,22 +21,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const galleryObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            galleryObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2
-      }
-    );
-
-    this.galleryItems.forEach((item) => galleryObserver.observe(item.nativeElement));
-
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -58,7 +35,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     );
 
-    const sections = document.querySelectorAll('.block, .gallery-card, .map-card, .footer-card, .lineup .row');
+    const sections = document.querySelectorAll('.block, .map-card, .footer-card');
     sections.forEach((section) => sectionObserver.observe(section));
   }
 
