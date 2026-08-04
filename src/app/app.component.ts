@@ -48,17 +48,17 @@ export class AppComponent implements OnInit, AfterViewInit {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible-section');
+            entry.target.classList.add('in');
             sectionObserver.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.2
+        threshold: 0.3
       }
     );
 
-    const sections = document.querySelectorAll('.section-card');
+    const sections = document.querySelectorAll('.block, .gallery-card, .map-card, .footer-card, .lineup .row');
     sections.forEach((section) => sectionObserver.observe(section));
   }
 

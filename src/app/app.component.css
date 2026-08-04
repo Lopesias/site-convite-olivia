@@ -1,13 +1,18 @@
 :root {
-  color-scheme: dark;
-  --bg: #1b1218;
-  --bg-raised: #261722;
-  --ink: #fff4f8;
-  --ink-dim: #e3b7c8;
-  --hairline: #4d3140;
-  --accent: #f0a8c5;
-  --accent-strong: #ff7cae;
-  --accent-soft: #ffdce9;
+  color-scheme: light;
+  --bg: #faf1ff;
+  --bg-alt: rgba(255, 249, 255, 0.92);
+  --ink: #3f2d4e;
+  --ink-dim: #7f6c8c;
+  --hairline: rgba(153, 105, 219, 0.18);
+  --pink: #f8c7e8;
+  --blue: #c6d5ff;
+  --lavender: #eadcff;
+  --accent: #9f71ff;
+  --accent-strong: #ff8ed1;
+  --accent-soft: #ffe3fb;
+  --border: rgba(171, 121, 222, 0.24);
+  --shadow: rgba(118, 80, 182, 0.16);
 }
 
 * {
@@ -16,8 +21,8 @@
 
 body {
   margin: 0;
-  font-family: 'Work Sans', sans-serif;
-  background: var(--bg);
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(180deg, #f8e6ff 0%, #f4edff 55%, #eaf3ff 100%);
   color: var(--ink);
   overflow-x: hidden;
   position: relative;
@@ -27,8 +32,8 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(255, 124, 174, 0.14), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 22%);
+  background: radial-gradient(circle at top left, rgba(196, 175, 255, 0.24), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(255, 150, 205, 0.18), transparent 22%);
   pointer-events: none;
   z-index: 0;
 }
@@ -37,10 +42,10 @@ body::after {
   content: '';
   position: fixed;
   inset: -20%;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(240, 168, 197, 0.16), transparent 28%),
-    radial-gradient(circle at 50% 80%, rgba(255, 220, 233, 0.08), transparent 34%);
-  filter: blur(88px);
+  background: radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 78% 28%, rgba(198, 212, 255, 0.18), transparent 26%),
+    radial-gradient(circle at 50% 82%, rgba(255, 150, 205, 0.13), transparent 34%);
+  filter: blur(92px);
   pointer-events: none;
   z-index: 0;
   animation: driftMist 16s ease-in-out infinite alternate;
@@ -54,7 +59,7 @@ body::after {
 .page-shell {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 32px 80px;
+  padding: 0 32px 80px;
   position: relative;
   z-index: 1;
 }
@@ -92,11 +97,11 @@ body::after {
   width: 24px;
   height: 28px;
   border-radius: 60% 40% 60% 40%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 168, 197, 0.85));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(178, 197, 255, 0.92));
   border: 1px solid rgba(255, 255, 255, 0.28);
   transform-origin: center center;
   animation: flap 1.2s ease-in-out infinite;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .butterfly .wing-left {
@@ -115,7 +120,7 @@ body::after {
   top: 50%;
   width: 8px;
   height: 18px;
-  background: #5f2a45;
+  background: linear-gradient(180deg, #8f70ff 0%, #ff8ccc 100%);
   border-radius: 999px;
   transform: translate(-50%, -50%);
   opacity: 0.9;
@@ -157,7 +162,7 @@ body::after {
 .route-marker.active {
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(210, 164, 79, 0.16);
+  box-shadow: 0 0 0 4px rgba(143, 112, 255, 0.16);
 }
 
 .section-card {
@@ -167,7 +172,7 @@ body::after {
   padding: 36px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 24px 80px rgba(139, 101, 182, 0.12);
   animation: fadeUp 0.8s ease both;
   transition: transform 240ms ease, box-shadow 240ms ease;
 }
@@ -194,8 +199,12 @@ body::after {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 28px;
   align-items: center;
-  min-height: 80vh;
+  min-height: 84vh;
   padding: 42px 40px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 255, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 36px;
+  box-shadow: 0 30px 110px var(--shadow);
 }
 
 .hero-content {
@@ -228,8 +237,7 @@ body::after {
 }
 
 .hero-visual {
-  animation: heroVisualReveal 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 0.15s;
+  display: none;
 }
 
 .hero-eyebrow,
@@ -243,11 +251,10 @@ body::after {
 }
 
 .hero h1,
-.countdown-card h2,
 .gallery-card h2,
 .map-card h2,
-.whatsapp-card h2,
-.story-section h2 {
+.footer-card h3,
+.block h2 {
   font-family: 'Fraunces', serif;
   font-weight: 500;
   line-height: 1.05;
@@ -260,18 +267,15 @@ body::after {
   margin: 0;
 }
 
-.hero-title-em {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 500;
-  color: var(--ink-dim);
-  font-style: italic;
-  margin: 8px 0 0;
+.hero-accent {
+  color: var(--accent-strong);
 }
 
+.hero-title-em,
 .hero-sub,
 .section-text,
-.copy p {
+.copy p,
+.footer-card p {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--ink-dim);
@@ -303,19 +307,22 @@ body::after {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-strong) 100%);
-  color: #4d2434;
-  box-shadow: 0 12px 28px rgba(255, 124, 174, 0.28);
+  background: linear-gradient(135deg, #c7d7ff 0%, #ff9bd2 100%);
+  color: #3d2b4c;
+  box-shadow: 0 14px 32px rgba(159, 106, 220, 0.24);
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(240, 168, 197, 0.45);
-  color: #fff8e8;
+  background: rgba(255, 233, 252, 0.96);
+  border-color: rgba(188, 145, 228, 0.45);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(239, 219, 249, 0.65);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 1);
 }
 
 .photo-frame,
@@ -324,7 +331,8 @@ body::after {
   border-radius: 28px;
   overflow: hidden;
   min-height: 480px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 245, 255, 0.94);
+  box-shadow: 0 24px 70px rgba(118, 80, 182, 0.16);
   animation: breatheImage 8s ease-in-out infinite;
 }
 
@@ -343,12 +351,24 @@ body::after {
   transition: transform 500ms ease;
 }
 
-.story-section {
+.block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: center;
-  margin-top: 24px;
+  background: rgba(255, 245, 255, 0.88);
+  border: 1px solid rgba(183, 137, 225, 0.24);
+  border-radius: 32px;
+  box-shadow: 0 30px 90px rgba(118, 80, 182, 0.14);
+  padding: 36px;
+}
+
+.block.flip .figure {
+  order: 2;
+}
+
+.block.flip .copy {
+  order: 1;
 }
 
 .figure {
@@ -367,10 +387,10 @@ body::after {
 }
 
 .meta-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--hairline);
-  padding: 14px 12px;
-  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 240, 255, 0.92), rgba(250, 232, 255, 0.92));
+  border: 1px solid rgba(178, 128, 224, 0.2);
+  padding: 16px 14px;
+  border-radius: 18px;
   color: var(--ink-dim);
 }
 
@@ -384,8 +404,14 @@ body::after {
 .countdown-card,
 .gallery-card,
 .map-card,
-.whatsapp-card {
-  margin-top: 24px;
+.whatsapp-card,
+.block,
+.footer-card {
+  margin-top: 44px;
+  background: rgba(255, 245, 255, 0.92);
+  border: 1px solid rgba(178, 133, 223, 0.18);
+  border-radius: 32px;
+  box-shadow: 0 24px 80px rgba(118, 80, 182, 0.1);
 }
 
 .countdown-grid {
@@ -396,10 +422,10 @@ body::after {
 }
 
 .countdown-item {
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid var(--hairline);
-  border-radius: 18px;
-  padding: 18px 12px;
+  background: linear-gradient(180deg, rgba(255, 227, 248, 0.8), rgba(255, 245, 255, 0.92));
+  border: 1px solid rgba(170, 119, 223, 0.22);
+  border-radius: 22px;
+  padding: 20px 14px;
   text-align: center;
 }
 
@@ -428,7 +454,8 @@ body::after {
 .gallery-item {
   border-radius: 22px;
   overflow: hidden;
-  border: 1px solid var(--hairline);
+  border: 1px solid rgba(157, 124, 214, 0.22);
+  background: linear-gradient(180deg, rgba(255, 246, 255, 0.9), rgba(242, 235, 255, 0.9));
   transform: translateY(28px);
   opacity: 0;
   transition: transform 0.8s ease, opacity 0.8s ease;
@@ -567,8 +594,13 @@ body::after {
 
 @media (max-width: 860px) {
   .hero,
-  .story-section {
+  .block {
     grid-template-columns: 1fr;
+  }
+
+  .block.flip .figure,
+  .block.flip .copy {
+    order: initial;
   }
 
   .hero {

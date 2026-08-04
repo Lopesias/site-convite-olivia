@@ -22,23 +22,15 @@
     </div>
   </div>
 
-  <aside class="route" aria-hidden="true">
-    <div class="route-fill" style="height: 100%"></div>
-    <div class="route-marker active" style="top: 0%"></div>
-    <div class="route-marker" style="top: 33%"></div>
-    <div class="route-marker" style="top: 66%"></div>
-    <div class="route-marker" style="top: 100%"></div>
-  </aside>
-
-  <section class="hero section-card">
+  <header class="hero">
+    <span class="blob blob-one"></span>
+    <span class="blob blob-two"></span>
     <div class="hero-content">
       <p class="hero-eyebrow">Convite • 18 de outubro de 2026</p>
-      <h1>Olivia</h1>
-      <p class="hero-title-em">Meu primeiro aniversário</p>
+      <h1>Olivia<br /><span class="hero-accent">faz 1 aninho</span></h1>
       <p class="hero-sub">Venha celebrar comigo esse dia tão especial, cheio de carinho, risadas e muita alegria.</p>
-
       <div class="hero-actions">
-        <a href="#confirmacao" class="btn btn-primary">Abrir convite</a>
+        <a href="#confirmacao" class="btn btn-primary">Confirmar presença</a>
         <a href="#local" class="btn btn-secondary">Ver local</a>
       </div>
     </div>
@@ -48,18 +40,17 @@
         <img src="/assets/olivia-convite.jpeg" alt="Olivia" />
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="confirmacao" class="story-section section-card">
+  <section id="confirmacao" class="block">
     <div class="figure">
+      <div class="wipe"></div>
       <img src="/assets/olivia-1.jpeg" alt="Olivia em um momento especial" />
     </div>
     <div class="copy">
-      <p class="eyebrow">Uma celebração acolhedora</p>
+      <p class="tag"><span class="dot"></span>Uma celebração acolhedora</p>
       <h2>Um dia cheio de carinho e alegria</h2>
-      <p>
-        Venha comemorar comigo esse momento especial, cercado de cor, risadas e muita emoção. Sua presença fará toda a diferença nesse dia único.
-      </p>
+      <p>Venha comemorar comigo esse momento especial, cercado de cor, risadas e muita emoção. Sua presença fará toda a diferença nesse dia único.</p>
       <div class="meta-grid">
         <div class="meta-card">
           <strong>Data</strong>
@@ -77,18 +68,27 @@
     </div>
   </section>
 
-  <section class="section-card countdown-card">
-    <p class="eyebrow">Contagem regressiva</p>
-    <h2>Faltam poucos dias para esse momento</h2>
-    <div class="countdown-grid">
-      <div class="countdown-item"><span>{{ timeLeft.days }}</span><small>Dias</small></div>
-      <div class="countdown-item"><span>{{ timeLeft.hours }}</span><small>Horas</small></div>
-      <div class="countdown-item"><span>{{ timeLeft.minutes }}</span><small>Minutos</small></div>
-      <div class="countdown-item"><span>{{ timeLeft.seconds }}</span><small>Segundos</small></div>
+  <section class="block flip">
+    <div class="figure">
+      <div class="wipe"></div>
+      <img src="/assets/olivia-countdown.jpeg" alt="Olivia contagem regressiva" />
+    </div>
+    <div class="copy">
+      <p class="tag"><span class="dot"></span>Contagem regressiva</p>
+      <h2>Faltam poucos dias para esse momento</h2>
+      <p>Estamos chegando perto do grande dia. Prepare-se para muita alegria, emoção e muitas fotos desse aniversário tão esperado.</p>
+      <div class="countdown-grid">
+        <div class="countdown-item"><span>{{ timeLeft.days }}</span><small>Dias</small></div>
+        <div class="countdown-item"><span>{{ timeLeft.hours }}</span><small>Horas</small></div>
+        <div class="countdown-item"><span>{{ timeLeft.minutes }}</span><small>Minutos</small></div>
+        <div class="countdown-item"><span>{{ timeLeft.seconds }}</span><small>Segundos</small></div>
+      </div>
     </div>
   </section>
 
-  <section class="section-card gallery-card">
+  
+
+  <section class="gallery-card">
     <p class="eyebrow">Memórias</p>
     <h2>Alguns momentos especiais</h2>
     <div class="gallery-grid">
@@ -98,10 +98,10 @@
     </div>
   </section>
 
-  <section id="local" class="section-card map-card">
+  <section id="local" class="map-card">
     <p class="eyebrow">Local</p>
     <h2>Venha me encontrar aqui</h2>
-    <p class="section-text">Espaço Kids<br />Rua Primeiro de Maio, 56<br />Vila Antonieta</p>
+    <p class="section-text">Espaço Kids — salão de festas do apartamento<br />Rua Primeiro de Maio, 56<br />Vila Antonieta</p>
     <iframe
       src="https://www.google.com/maps?q=Rua%20Primeiro%20de%20Maio%2056%20Vila%20Antonieta&output=embed"
       loading="lazy"
@@ -110,13 +110,9 @@
     ></iframe>
   </section>
 
-  <section class="section-card whatsapp-card">
-    <p class="eyebrow">Confirmação</p>
-    <h2>Me avise que você vem</h2>
-    <p class="section-text">Envie uma mensagem para confirmar sua presença e fazer parte desse momento tão especial.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/5511980960644?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20anivers%C3%A1rio%20da%20Olivia.%20Estou%20muito%20animado%20para%20celebrar%20com%20voc%C3%AA!" class="btn btn-primary">Confirmar presença</a>
-      <a href="https://wa.me/5511980960644?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20anivers%C3%A1rio%20da%20Olivia." class="btn btn-secondary">Mensagem no WhatsApp</a>
-    </div>
-  </section>
+  <footer class="footer-card">
+    <h3>Confirma que vai?</h3>
+    <p>Só pra gente saber quanto carinho preparar.</p>
+    <a href="https://wa.me/5511980960644?text=Ol%C3%A1%2C%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20anivers%C3%A1rio%20da%20Olivia." class="btn btn-primary">Confirmar presença</a>
+  </footer>
 </main>
